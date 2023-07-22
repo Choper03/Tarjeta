@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
+    <script src="index.js"></script>
+    <title>Mi Tarjeta</title>
+</head>
+<body>
+    <div class="contenedor-1">
+    <div class="izquierda">
+        <h2 class="datos"> Tipo de tarjeta</h2>
+        <label>
+            <input type="checkbox" id="credito" onclick="tipo('credito')"> Credito
+        </label>
+        <label>
+            <input type="checkbox" id="debito" onclick="tipo('debito')"> Debito
+        </label>
+    </div>
+    <div class="derecha"><br>
+        <div class="izquierda">
+        <label for="opciones" class="datos">Selecciona tu Banco:</label>
+        <select id="opciones" onchange="mostrarSeleccion()" class="caja-2">
+        <option value="xxxxxxxx">--------</option>
+        <option value="Banrural">Banrural</option>
+        <option value="Bantrab">Bantrab</option>
+        <option value="Banco Industrial">BI</option>
+        </select>
+        </div>
+        <div class="derecha">
+            <br>
+            <button class="boton" onclick="limpiar()">Limpiar Tarjeta</button>
+            
+        </div>
+    </div>
+    </div>
+
+
+    <div class="contenedor">
+        <div class="izquierda">
+           <div class="formulario">
+                <h2 class="datos">Nombre en Tarjeta</h2>
+                <input type="text" id="nombre" oninput="nombre()" class="caja">
+
+                <h2 class="datos">Numero en Tarjeta</h2>
+                <input type="text" id="numero" oninput="numero()" class="caja">
+
+                <div class="contenedor-1">
+                    <div class="izquierda">
+                        <h2 class="datos">Vencimiento</h2>
+                        <input type="month" id="ven" oninput="vencimiento()" class="caja-2">
+                    </div>
+                    <div class="derecha">
+                        <h2>CVV</h2>
+                        <input type="number" id="cvv" oninput="cvv()" class="caja-1">
+                    </div>
+                </div>
+           </div> 
+        </div>
+        <div class="derecha">
+            <div class="tarjeta">
+                <div class="frente" id="frente">
+                    <h3 class="titulo" id="tipo-tarjeta">Tarjeta de credito</h3>
+                    <span class="banco" id="name-bank"></span>
+                    <img class="chip" src="card.png" alt="">
+                    <h1 class="numero" id="number"></h1>
+                    <div class="validacion">
+                        <span> Fecha de <br>Vencimiento</span>
+                        <span id="fecha"></span>
+                    </div>
+                    <h3 class="nombre" id="nombre-tarjeta"></h3>
+                    <img class="visa" src="visa.png" alt="">
+                </div>
+                <div class="atras" id="atras">
+                    <h3 class="titulo">Banco de Guatemala</h3>
+                    <div class="barra"></div>
+                    <br><br>
+                    <div class="cvv">
+                        <div class="barra-1"></div>
+                        <div class="barra-2"><span id="cvv-1" class="uno"></span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
